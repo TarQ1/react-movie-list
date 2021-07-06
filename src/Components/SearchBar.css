@@ -8,11 +8,16 @@
     text-align: center;
 }
 
+.bar-div{
+    padding-bottom: 20px;
+}
+
 .search-bar {
 width: 367px;
 height: 48px;
 left: 204px;
 top: 185px;
+
 
 border: 1px solid #b4855e;
 box-sizing: border-box;
