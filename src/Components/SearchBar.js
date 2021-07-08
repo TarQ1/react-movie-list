@@ -1,7 +1,9 @@
-
 import './SearchBar.css';
+import SearchEvent from './SearchBarController';
 
-function SearchBar() {
+
+function SearchBar( {list, changeValue} ) {
+    let searchBarController = new SearchEvent({list , changeValue});
     return (
         <div class="bar-div">
             <p>
@@ -11,10 +13,12 @@ function SearchBar() {
             </p>
             <input class="search-bar"
                 placeholder="Batman vs Superman"
+                onChange={event => searchBarController.sendRequest(event.target.value)}
             />
         </div >
     );
 }
+
 
 
 export default SearchBar;

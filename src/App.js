@@ -1,16 +1,22 @@
 import './App.css';
+import React from 'react';
 import SearchBar from './Components/SearchBar';
 import MovieList from './Components/MovieList';
 
-function App(props) {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <SearchBar bar={props.SearchBar} />
-        <MovieList list={props.MovieList} />
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {list: ""};
+  }
+  render() {
+
+    return (
+      <div className="App">
+        <SearchBar list={this.state.list} changeValue={(list) => this.setState({list})}/>
+        <MovieList list={this.state.list} />
+      </div>
+    );
+  }
 }
 
 export default App;

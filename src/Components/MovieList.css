@@ -1,11 +1,12 @@
 .filmListLayout {
-    width: 100%;
+    background-color: inherit;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
     align-content: flex-start;
     padding: 10, 10, 10, 10;
+    height:max-content;
 }
 
 .itemLayout {
