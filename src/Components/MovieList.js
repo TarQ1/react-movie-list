@@ -16,19 +16,6 @@ function GenerateItem() {
     return final;
 }
 
-function changeLayout() {
-    return "ah bon ?"
-}
-
-function handleClick(changeLayout) {
-    console.log("Poster clicked" + changeLayout)
-    return (
-        <div>
-            E A SPORT C'EST DANS LE JEU
-        </div>
-    );
-}
-
 class itemLayout extends React.Component {
     constructor(props) {
         super(props);
