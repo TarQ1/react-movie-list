@@ -12,11 +12,20 @@
 .itemLayout {
     display: inline-grid;
     grid-template-columns: 131px;
-    justify-content: center;
-    flex-wrap: 2;
+    justify-content:left;
     font-size: small;
     padding-right: 10px;
     padding-bottom: 10px;
+}
+.longItemLayout {
+    grid-template-rows: 500px;
+    grid-template-columns: 400px;
+
+    display:table;
+    justify-content: center;
+    font-size: small;
+    padding-right: 20px;
+    padding-bottom: 20px;
 }
 
 .poster {
