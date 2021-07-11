@@ -6,25 +6,24 @@
     line-height: 19px;
     letter-spacing: 0em;
     text-align: center;
+    color: inherit;
 }
 
-.bar-div{
+.bar-div {
     padding-bottom: 20px;
     padding-top: 40px;
-
 }
 
 .search-bar {
-width: 367px;
-height: 48px;
-left: 204px;
-top: 185px;
-
-
-border: 1px solid #b4855e;
-box-sizing: border-box;
-border-radius: 12px;
-font: inherit;
-background-color: inherit;
-text-align: center;
+    width: 367px;
+    height: 48px;
+    left: 204px;
+    color: inherit;
+    top: 185px;
+    border: 1px solid #b4855e;
+    box-sizing: border-box;
+    border-radius: 12px;
+    font: inherit;
+    background-color: inherit;
+    text-align: center;
 }

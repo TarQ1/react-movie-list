@@ -2,13 +2,14 @@ import './SearchBar.css';
 import SearchEvent from './SearchBarController';
 
 
-function SearchBar( {list, changeValue} ) {
-    let searchBarController = new SearchEvent({list , changeValue});
+function SearchBar( {changeValue} ) {
+    let searchBarController = new SearchEvent({changeValue});
+    console.log("Searchbar created");
     return (
         <div class="bar-div">
             <p>
                 <label htmlFor="header-search">
-                    <span className="visually-hidden"> Search Films</span>
+                    <span className="visually-hidden">Search Films</span>
                 </label>
             </p>
             <input class="search-bar"

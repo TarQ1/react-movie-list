@@ -8,7 +8,7 @@ import MovieList from './MovieList';
 // open the request with the verb and the url
 // send the request
 class SearchEvent {
-    constructor({ list, changeValue }) {
+    constructor({changeValue }) {
         this.xhr = new XMLHttpRequest()
         this.xhr.addEventListener('load', () => {
             // update the state of the component with the result here

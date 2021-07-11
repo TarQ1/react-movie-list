@@ -12,7 +12,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <SearchBar list={this.state.list} changeValue={(list) => this.setState({list})}/>
+        <SearchBar changeValue={(list) => this.setState({list})}/>
         <MovieList list={this.state.list} />
       </div>
     );
