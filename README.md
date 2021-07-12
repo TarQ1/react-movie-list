@@ -16,3 +16,11 @@ Open `http://localhost:3000/` on your favorite web browser to see the output.
 - Hide fields with no output from que query (eg: Release date)
 
 
+## Output on my browser:
+
+![default.png](https://postimg.cc/zy81pPnh)
+
+![showfilm.png](https://postimg.cc/JHZ95b0K)
+
+
+
