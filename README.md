@@ -13,5 +13,6 @@ Open `http://localhost:3000/` on your favorite web browser to see the output.
 - Make a button instead of the OnChange on the search bar to make less requests and therefore don't flood the browser with get requests.
 - The view can always be improved.
 - Hide the api key somehow.
+- Hide fields with no output from que query (eg: Release date)
 
 
