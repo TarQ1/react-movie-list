@@ -18,9 +18,9 @@ Open `http://localhost:3000/` on your favorite web browser to see the output.
 
 ## Output on my browser:
 
-[default.png](https://postimg.cc/zy81pPnh)
+[![showfilm.png](https://i.postimg.cc/tJMpykj0/showfilm.png)](https://postimg.cc/JHZ95b0K)
 
-[showfilm.png](https://postimg.cc/JHZ95b0K)
+[![default.png](https://i.postimg.cc/g26kzCjg/default.png)](https://postimg.cc/zy81pPnh)
 
 
 
