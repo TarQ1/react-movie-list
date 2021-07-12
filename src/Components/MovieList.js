@@ -47,7 +47,7 @@ class itemLayout extends React.Component {
                         <p className="basicDesc">popularity: <bdi className="filmPopularity">{this.props.popularity}</bdi></p>
                         <p className="basicDesc">release date: <bdi className="filmReleaseDate"> {this.props.first_air_date}</bdi></p>
                         <p className="basicDesc">origin country: <bdi className="filmOriginCountry">{this.props.origin_country}</bdi></p>
-                        <p className="basicDesc">origin language: <bdi className="filmOriginCountry">{this.props.original_language}</bdi></p>
+                        <p className="basicDesc">original language: <bdi className="filmOriginCountry">{this.props.original_language}</bdi></p>
                     </div>
                 </div>)
         }
