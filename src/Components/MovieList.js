@@ -32,22 +32,22 @@ class itemLayout extends React.Component {
 
     render() {
         if (!this.state.clicked) {
-            return (<div class="itemLayout" onClick={this.handleClick}> {this.props.text} {this.props.img} </div>)
+            return (<div className="itemLayout" onClick={this.handleClick}> {this.props.text} {this.props.img} </div>)
         }
         else {
             return (
-                <div class="longItemLayout" onClick={this.handleClick}>
-                    <div class="posterBigger">{React.createElement('img', {
-                        class: 'posterBigger', src: "https://image.tmdb.org/t/p/original/" + this.props.imgPath,
+                <div className="longItemLayout" onClick={this.handleClick}>
+                    <div className="posterBigger">{React.createElement('img', {
+                        className: 'posterBigger', src: "https://image.tmdb.org/t/p/original/" + this.props.imgPath,
                         onError: (e) => { e.target.onerror = null; e.target.src = missingImgUrl }
                     })}</div>
-                    <div class="filmText">
-                        <p class="filmTitle">{this.props.text}</p>
-                        <bdi class="filmDescription">{this.props.desc}</bdi>
-                        <p class="basicDesc">popularity: <bdi class="filmPopularity">{this.props.popularity}</bdi></p>
-                        <p class="basicDesc">release date: <bdi class="filmReleaseDate"> {this.props.first_air_date}</bdi></p>
-                        <p class="basicDesc">origin country: <bdi class="filmOriginCountry">{this.props.origin_country}</bdi></p>
-                        <p class="basicDesc">origin language: <bdi class="filmOriginCountry">{this.props.original_language}</bdi></p>
+                    <div className="filmText">
+                        <p className="filmTitle">{this.props.text}</p>
+                        <bdi className="filmDescription">{this.props.desc}</bdi>
+                        <p className="basicDesc">popularity: <bdi className="filmPopularity">{this.props.popularity}</bdi></p>
+                        <p className="basicDesc">release date: <bdi className="filmReleaseDate"> {this.props.first_air_date}</bdi></p>
+                        <p className="basicDesc">origin country: <bdi className="filmOriginCountry">{this.props.origin_country}</bdi></p>
+                        <p className="basicDesc">origin language: <bdi className="filmOriginCountry">{this.props.original_language}</bdi></p>
                     </div>
                 </div>)
         }
@@ -61,7 +61,7 @@ function GenerateItemWithQuery(input) {
         for (let i = 0; i < movieList.length; i++) {
 
             let img = React.createElement('img', {
-                class: 'poster', src: "https://image.tmdb.org/t/p/original/" + movieList[i].poster_path,
+                className: 'poster', src: "https://image.tmdb.org/t/p/original/" + movieList[i].poster_path,
                 onError: (e) => { e.target.onerror = null; e.target.src = missingImgUrl }
             });
 
@@ -70,7 +70,7 @@ function GenerateItemWithQuery(input) {
                 title = movieList[i].original_name;
             }
 
-            let text = React.createElement('a', { class: 'poster_text' }, title);
+            let text = React.createElement('a', { className: 'poster_text' }, title);
 
             let container = React.createElement(itemLayout, {
                 img: img,
@@ -97,17 +97,22 @@ function GenerateItemWithQuery(input) {
 
 
 function MovieList({ list }) {
+    var i = 0 ;
     if (!list || list.length === 0 || list === "") {
         return (
-            <div class="filmListLayout" >
-                {GenerateItemWithQuery(JSON.stringify(json))}
+            <div className="filmListLayout" >
+                {GenerateItemWithQuery(JSON.stringify(json)).map(item =>
+                 <li key={i++}>{item}</li>)
+                }
             </div>
         );
     }
     else {
         return (
-            <div class="filmListLayout">
-                {GenerateItemWithQuery(list)}
+            <div className="filmListLayout">
+                {GenerateItemWithQuery(list).map(item =>
+                <li key={i++}>{item}</li>)
+                }
             </div>
         );
     }
