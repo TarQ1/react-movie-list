@@ -102,7 +102,7 @@ function MovieList({ list }) {
         return (
             <div className="filmListLayout" >
                 {GenerateItemWithQuery(JSON.stringify(json)).map(item =>
-                    <li key={i++}>{item}</li>)
+                    <div key={i++}>{item}</div>)
                 }
             </div>
         );
@@ -111,7 +111,7 @@ function MovieList({ list }) {
         return (
             <div className="filmListLayout">
                 {GenerateItemWithQuery(list).map(item =>
-                    <li key={i++}>{item}</li>)
+                    <div key={i++}>{item}</div>)
                 }
             </div>
         );
