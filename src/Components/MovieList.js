@@ -97,12 +97,12 @@ function GenerateItemWithQuery(input) {
 
 
 function MovieList({ list }) {
-    var i = 0 ;
+    var i = 0;
     if (!list || list.length === 0 || list === "") {
         return (
             <div className="filmListLayout" >
                 {GenerateItemWithQuery(JSON.stringify(json)).map(item =>
-                 <li key={i++}>{item}</li>)
+                    <li key={i++}>{item}</li>)
                 }
             </div>
         );
@@ -111,7 +111,7 @@ function MovieList({ list }) {
         return (
             <div className="filmListLayout">
                 {GenerateItemWithQuery(list).map(item =>
-                <li key={i++}>{item}</li>)
+                    <li key={i++}>{item}</li>)
                 }
             </div>
         );
