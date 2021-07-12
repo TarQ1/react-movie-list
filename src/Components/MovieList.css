@@ -16,6 +16,7 @@
     font-size: small;
     padding-right: 10px;
     padding-bottom: 10px;
+    color: #fbf1c7;
 }
 
 .poster {
@@ -34,7 +35,6 @@
     text-anchor: start;
     grid-area: 2;
 }
-
 
 .longItemLayout {
     display: grid;
@@ -55,55 +55,63 @@
     object-fit: cover;
     left: 29px;
     top: 29px;
+    border: #fabd2d;
+    border-radius: 1px;
+    border-spacing: 10px;
 }
 
-.filmText
-{
+.filmText {
     grid-column: 2;
     width: fit-content;
     height: fit-content;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
+    font-size: medium;
     line-height: 28px;
-    text-align: center;
+    text-align: left;
     padding-left: 30px;
 }
 
 .filmTitle {
-    color: yellow;
-    font-family: inherit;
+    text-decoration: underline;
     text-align: center;
-    font-size: larger;
+    color: #fabd2d;
+    font-family: inherit;
+    font-size: large;
+}
 
+.basicDesc {
+    color: #fabd2d;
+    font-family: inherit;
+    font-size: small;
 }
 
 .filmPopularity {
+    color: #fbf1c7;
     font-family: inherit;
-    text-align: left;
-    font-size: large;
-
+    font-size: small;
 }
 
-.filmDescription
-{
+.filmDescription {
+    display:block;
+    color: #fbf1c7;
     font-family: inherit;
     text-align: left;
-    font-size: 10px;
-
+    font-size: 11px;
+    line-height: 14px;
 }
-.filmReleaseDate
-{
+
+.filmReleaseDate {
+    color:#fbf1c7;
     font-family: inherit;
     text-align: left;
-    font-size: medium;
-
+    font-size: small;
 }
-.filmOriginCountry
-{
+
+.filmOriginCountry {
+    color:#fbf1c7;
     font-family: inherit;
     text-align: center;
     font-size: left;
-
 }

@@ -1,6 +1,8 @@
 import './MovieList.css';
 import React from 'react';
 var json = require('../res/movies.json');
+var missingImgUrl = `https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fvectors%2Fmissing-red-rubber-stamp-icon-on-transparent-background-vector-id891769064%3Fk%3D6%26m%3D891769064%26s%3D170667a%26w%3D0%26h%3D7quyJKDGsEyrBhxEeS6TkSgA5fNQhMGx_WH9OcwyXsI%3D&f=1&nofb=1`;
+
 
 class itemLayout extends React.Component {
     constructor(props) {
@@ -10,6 +12,7 @@ class itemLayout extends React.Component {
             clicked: false
         };
     }
+
 
     handleClick = () => {
         console.log("itemlayout: clicked");
@@ -25,24 +28,28 @@ class itemLayout extends React.Component {
         }
     }
 
+
+
     render() {
         if (!this.state.clicked) {
             return (<div class="itemLayout" onClick={this.handleClick}> {this.props.text} {this.props.img} </div>)
         }
         else {
-            return (<div class="longItemLayout" onClick={this.handleClick}>
-                <div class="posterBigger">{React.createElement('img', {
-                class: 'posterBigger', src: "https://image.tmdb.org/t/p/original/" + this.props.imgPath,
-                onError: (e) => { e.target.onerror = null; e.target.src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.VeaeqtAPfyJtw0_neF3TBQHaE8%26pid%3DApi&f=1" }
-            })}</div>
-                <div class="filmText">
-                    <p class="filmTitle">{this.props.text}</p>
-                    <p class="filmPopularity">popularity: {this.props.popularity}</p>
-                    <p class="filmDescription">description: {this.props.desc}</p>
-                    <p class="filmReleaseDate">release date: {this.props.first_air_date}</p>
-                    <p class="filmOriginCountry">origin country: {this.props.origin_country}</p>
-                </div>
-            </div>)
+            return (
+                <div class="longItemLayout" onClick={this.handleClick}>
+                    <div class="posterBigger">{React.createElement('img', {
+                        class: 'posterBigger', src: "https://image.tmdb.org/t/p/original/" + this.props.imgPath,
+                        onError: (e) => { e.target.onerror = null; e.target.src = missingImgUrl }
+                    })}</div>
+                    <div class="filmText">
+                        <p class="filmTitle">{this.props.text}</p>
+                        <bdi class="filmDescription">{this.props.desc}</bdi>
+                        <p class="basicDesc">popularity: <bdi class="filmPopularity">{this.props.popularity}</bdi></p>
+                        <p class="basicDesc">release date: <bdi class="filmReleaseDate"> {this.props.first_air_date}</bdi></p>
+                        <p class="basicDesc">origin country: <bdi class="filmOriginCountry">{this.props.origin_country}</bdi></p>
+                        <p class="basicDesc">origin language: <bdi class="filmOriginCountry">{this.props.original_language}</bdi></p>
+                    </div>
+                </div>)
         }
     }
 }
@@ -55,21 +62,27 @@ function GenerateItemWithQuery(input) {
 
             let img = React.createElement('img', {
                 class: 'poster', src: "https://image.tmdb.org/t/p/original/" + movieList[i].poster_path,
-                onError: (e) => { e.target.onerror = null; e.target.src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.VeaeqtAPfyJtw0_neF3TBQHaE8%26pid%3DApi&f=1" }
+                onError: (e) => { e.target.onerror = null; e.target.src = missingImgUrl }
             });
 
             let title = movieList[i].name;
             if (title === undefined || title === "") {
                 title = movieList[i].original_name;
             }
-            let first_air_date = movieList[i].first_air_date;
-            let origin_country = movieList[i].origin_country[0];
-            let overview = movieList[i].overview;
-            let popularity = movieList[i].popularity;
 
             let text = React.createElement('a', { class: 'poster_text' }, title);
 
-            let container = React.createElement(itemLayout, { img: img, imgPath: movieList[i].poster_path, text: text, desc: overview, first_air_date: first_air_date, origin_country: origin_country, popularity: popularity });
+            let container = React.createElement(itemLayout, {
+                img: img,
+                imgPath: movieList[i].poster_path,
+                original_name: movieList[i].original_name,
+                text: text,
+                desc: movieList[i].overview,
+                first_air_date: movieList[i].first_air_date,
+                original_language: movieList[i].original_language,
+                origin_country: movieList[i].origin_country,
+                popularity: movieList[i].popularity,
+            });
 
             final.push(container);
         }

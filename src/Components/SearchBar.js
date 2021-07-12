@@ -7,13 +7,8 @@ function SearchBar( {changeValue} ) {
     console.log("Searchbar created");
     return (
         <div class="bar-div">
-            <p>
-                <label htmlFor="header-search">
-                    <span className="visually-hidden">Search Films</span>
-                </label>
-            </p>
             <input class="search-bar"
-                placeholder="Batman vs Superman"
+                placeholder="Film name"
                 onChange={event => searchBarController.sendRequest(event.target.value)}
             />
         </div >
